@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.4.6)
+cmake_minimum_required(VERSION 3.5.1)
 project(dso_ros)
 
 find_package(catkin REQUIRED COMPONENTS
@@ -12,7 +12,7 @@ set(DSO_PATH $ENV{DSO_PATH})
 message("\n\n---- LOOKING FOR DSO at\n\"${DSO_PATH}\"")
 
 
-find_package(Pangolin 0.2 REQUIRED)
+find_package(Pangolin 0.5 REQUIRED)
 message("\n\n---- FOUND Pangolin Headers at\n\"${Pangolin_INCLUDE_DIRS}\"")
 message("---- FOUND Pangolin Libs at\n\"${Pangolin_LIBRARIES}\"")
 
@@ -37,7 +37,7 @@ catkin_package(
 ###########
 
 set(CMAKE_CXX_FLAGS
-   "${SSE_FLAGS} -O2 -g -std=c++0x -march=native -fno-omit-frame-pointer"
+   "${SSE_FLAGS} -O2 -g -std=c++17 -march=native -fno-omit-frame-pointer"
 )
 
 include_directories(
